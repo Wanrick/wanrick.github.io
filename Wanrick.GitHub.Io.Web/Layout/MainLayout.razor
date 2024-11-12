@@ -1,3 +1,13 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime Js
 
 @Body
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool isFirstRender) {
+        if (isFirstRender)
+        {
+            await Js.InvokeVoidAsync("window.initializeFlowbite");
+        }
+    }
+}

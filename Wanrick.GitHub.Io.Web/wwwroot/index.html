@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
     <title>Wanrick.GitHub.Io</title>
     <base href="/" />
+    <link href="css/app.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,6 +26,13 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+        window.initializeFlowbite = () => {
+            initFlowbite();
+        }
+    </script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 

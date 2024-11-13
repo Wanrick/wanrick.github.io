@@ -34,3 +34,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/Web/wwwroot
+          ssh-key: ${{ secrets.DEPLOY_KEY }}

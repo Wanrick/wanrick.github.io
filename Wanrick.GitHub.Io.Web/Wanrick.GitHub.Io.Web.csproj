@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <GHPages>true</GHPages>
+        <WasmEnableSIMD>false</WasmEnableSIMD>
     </PropertyGroup>
 
     <ItemGroup>

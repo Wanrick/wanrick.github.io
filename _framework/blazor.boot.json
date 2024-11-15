@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Wanrick.GitHub.Io.Web",
   "resources": {
-    "hash": "sha256-o6rq+lZJA+MR7CZUHT1IZjAebcHQCuEDCJYDnKebMd4=",
+    "hash": "sha256-Vz81fnBa25osuSF8T2Oym0Vxzpymy8wR3tG6w4U9sDA=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.us9htqhhrp.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.u5t8zcgbz0.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -35,7 +35,7 @@
       "System.Text.Json.mbtmjdua3x.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.gl65p7jdfx.wasm": "System.Text.RegularExpressions.wasm",
       "System.Threading.cjrcei28ym.wasm": "System.Threading.wasm",
-      "Wanrick.GitHub.Io.Web.v9l5cg8nw1.wasm": "Wanrick.GitHub.Io.Web.wasm",
+      "Wanrick.GitHub.Io.Web.34c3y82ixt.wasm": "Wanrick.GitHub.Io.Web.wasm",
       "dotnet.native.w9i95jzdix.js": "dotnet.native.js",
       "dotnet.native.de5x83zlg9.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
@@ -93,7 +93,7 @@
       "System.Text.Json.mbtmjdua3x.wasm": "sha256-DhsFaxsLRVjYqYbmQTRQDYvm+ZXxfAyrJAAYwrysrZA=",
       "System.Text.RegularExpressions.gl65p7jdfx.wasm": "sha256-XKqW+TrmS4TjaNifmwb+yfc9w2BWkr3dUjq0xmJYmEw=",
       "System.Threading.cjrcei28ym.wasm": "sha256-aIx5rnPej8hcc5oeMQsaB4zHJDz9pje2l1AYFmX3mMw=",
-      "Wanrick.GitHub.Io.Web.v9l5cg8nw1.wasm": "sha256-8wZ2mLppXB5ZEHN+B67xT+xLrQSBfbAppjGbVy5fOZs="
+      "Wanrick.GitHub.Io.Web.34c3y82ixt.wasm": "sha256-E4ICyNdgkwx2rPLNscgYX0NQTYU1hDpwsOoT8e9SSys="
     }
   },
   "cacheBootResources": true,

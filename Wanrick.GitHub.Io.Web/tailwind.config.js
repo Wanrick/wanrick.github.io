@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
+        "./Components/*.{razor,html,cshtml}", 
         "./Layout/*.{razor,html,cshtml}", 
-        "./Pages/*.{razor,html,cshtml}", 
-        "./node_modules/flowbite/**/*.js"
+        "./Pages/*.{razor,html,cshtml}",
+        "./wwwroot/index.html",
     ],
+    darkMode: 'selector',
     theme: {
         container: {
             center: true
@@ -68,7 +70,5 @@ module.exports = {
             'body': ['"Roboto Serif"', 'serif']
         }
     },
-    plugins: [
-        'flowbite/plugin'
-    ],
+    plugins: []
 }

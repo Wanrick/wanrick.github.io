@@ -10,10 +10,12 @@
         <title>Wanrick's Dev Blog</title>
         <base href="/"/>
         <link href="css/app.min.css" rel="stylesheet"/>
+        <link href="assets/fa/fontawesome.min.css" rel="stylesheet" />
+        <link href="assets/fa/brands.min.css" rel="stylesheet" />
+        <link href="assets/fa/solid.min.css" rel="stylesheet" />
     </head>
-
     <body>
-        <iframe src="three-dee.html" class="border-none fixed z-0 top-0 left-0 w-full h-full" style="pointer-events: none;"></iframe>
+        <iframe src="three-dee.html" class="border-none fixed z-0 top-0 left-0 w-full h-full hidden lg:block" style="pointer-events: none;"></iframe>
         <div id="app" class="w-full h-full">
             <div id="blazor-error-ui w-full h-8 bg-black text-white text-center">
                 Blazor is being loaded. If this message persists, please check your browser's console for errors.
@@ -33,12 +35,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-        <script>
-            window.initializeFlowbite = () => {
-                initFlowbite();
-            }
-        </script>
+        <script src="js/theme-switcher.js"></script>
         <script src="_framework/blazor.webassembly.js"></script>
     </body>
 

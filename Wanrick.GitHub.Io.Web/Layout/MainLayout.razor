@@ -1,13 +1,51 @@
-﻿@inherits LayoutComponentBase
+﻿@using Wanrick.GitHub.Io.Web.Components
+@inherits LayoutComponentBase
 @inject IJSRuntime Js
 
-@Body
+<ThemeSwitcher />
+<div class="w-full h-full md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-0">
+    <aside class="bg-cyan-chill-500 dark:bg-almost-black w-full h-full content-center md:col-span-1">
+        <div class="flex justify-center px-8">
+            <div class="content-center">
+                <img class="rounded-full lg:w-64 lg:h-64 md:w-56 md:h-56 bg-cyan-chill-400 drop-shadow-xl mx-auto mb-4"
+                     src="assets/images/wanrick.png" alt="Wanrick">
+                <h1 class="font-display text-2xl m-4 text-black dark:text-white">
+                    Who am I?
+                </h1>
+                <p class="font-body mx-2 text-black dark:text-white">
+                    I'm a software developer who works primarily with Microsoft
+                    technologies. <br/> Feel free to reach out to me on either:
+                </p>
+                <div class="my-4 flex justify-center">
+                    <button type="button"
+                            class="font-display rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:text-white hover:bg-dark-red bg-cyan-chill-300 text-black dark:hover:text-white dark:hover:bg-dark-red dark:bg-cyan-light dark:text-white"
+                            @onclick="NavigateToGithub">
+                        <i class="fa-brands fa-github"></i>&nbsp;Github
+                    </button>
+                    <button type="button"
+                            class="font-display rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:text-white hover:bg-dark-red bg-cyan-chill-300 text-black dark:hover:text-white dark:hover:bg-dark-red dark:bg-cyan-light dark:text-white"
+                            @onclick="NavigateToLinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="bg-gray-100 w-full h-full md:col-span-2 lg:col-span-3">
+        @Body
+    </main>
+</div>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool isFirstRender) {
-        if (isFirstRender)
-        {
-            await Js.InvokeVoidAsync("window.initializeFlowbite");
-        }
+    
+    private async Task NavigateToGithub()
+    {
+        await Js.InvokeVoidAsync("open", "https://github.com/Wanrick", "_blank");
     }
+
+    private async Task NavigateToLinkedIn()
+    {
+        await Js.InvokeVoidAsync("open", "https://www.linkedin.com/in/wanrick/", "_blank");
+    }
+
 }

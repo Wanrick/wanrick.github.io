@@ -4,6 +4,11 @@
     themes: light --default, dark --prefersdark, cupcake;
 }
 
+@theme {
+    --font-header: "Space Mono", "serif";
+    --font-body: "Karla", "serif";
+}
+
 .karla-gfont {
     font-family: "Karla", serif;
     font-optical-sizing: auto;

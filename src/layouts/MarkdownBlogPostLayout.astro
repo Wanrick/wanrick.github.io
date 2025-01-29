@@ -1,0 +1,28 @@
+---
+import Layout from './Layout.astro';
+import Prose from '../components/Prose.astro';
+
+const {frontmatter} = Astro.props;
+const imageUrl = frontmatter.image.url;
+---
+<Layout title={frontmatter.title}>
+    <div id="hero-image" class="w-full h-96 p-4 bg-cover bg-center flex items-end">
+        <div class="w-full grid grid-cols-6 items-center text-accent bg-accent-content/70 px-4">
+            <p class="col-span-4 text-xl"><em>{frontmatter.description}</em></p>
+            <div class="col-span-2 flex flex-col items-end justify-end">
+                <p>Written by: {frontmatter.author}</p>
+                <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <Prose>
+            <slot/>
+        </Prose>
+    </div>
+</Layout>
+
+<script define:vars={{imageUrl}}>
+    const heroImage = document.getElementById('hero-image');
+    heroImage.style.backgroundImage = `url(${imageUrl})`;
+</script>

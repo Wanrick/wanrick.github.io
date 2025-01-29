@@ -11,6 +11,7 @@ interface Props {
 }
 
 const {title} = Astro.props;
+const headingSize = title.length > 20 ? "text-2xl" : "text-5xl";
 ---
 
 <html lang="en" data-theme="cupcake">
@@ -20,38 +21,67 @@ const {title} = Astro.props;
 		<meta name="description" content="Astro description"/>
 		<meta name="generator" content={Astro.generator}/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
+		<title>Wanrick Dev - {title}</title>
 	</head>
 	<body>
-	<div class="h-full w-full grid grid-cols-4">
-		<div class="h-full col-span-1 flex flex-col justify-center items-center bg-primary">
-			<div class="avatar">
-				<div class="w-48 rounded-full">
-					<Image src={profileImage} alt="A pixelated image of my face" />
+		<div class="h-full w-full max-h-full grid grid-cols-4 grid-rows-8">
+			<div class="col-span-1 row-span-8 flex flex-col justify-center items-center bg-primary">
+				<div class="avatar">
+					<div class="w-48 rounded-full">
+						<Image src={profileImage} alt="A pixelated image of my face" />
+					</div>
+				</div>
+				<h1 class="text-2xl font-header">Who am I?</h1>
+				<p class="text-lg font-body m-4">
+					I'm a software developer who works primarily with Microsoft technologies.
+					Feel free to reach out to me on either:
+				</p>
+				<div>
+					<button class="btn bg bg-primary-content text-base-100">
+						<i class="fa-brands fa-github-square text-xl"></i>
+						Github
+					</button>
+					<button class="btn bg-primary-content text-base-100">
+						<i class="fa-brands fa-linkedin text-xl"></i>
+						LinkedIn
+					</button>
 				</div>
 			</div>
-			<h1 class="text-2xl font-header">Who am I?</h1>
-			<p class="text-lg font-body m-4">
-				I'm a software developer who works primarily with Microsoft technologies.
-				Feel free to reach out to me on either:
-			</p>
-			<div>
-				<button class="btn bg bg-primary-content text-base-100">
-					<i class="fa-brands fa-github-square text-xl"></i>
-					Github
-				</button>
-				<button class="btn bg-primary-content text-base-100">
-					<i class="fa-brands fa-linkedin text-xl"></i>
-					LinkedIn
-				</button>
+			<div class="col-span-3 row-span-1 p-8 pb-0">
+				<div class={"inline p-4 bg-primary text-primary-content rounded font-header fixed " + headingSize}>{title}.</div>
 			</div>
-		</div>
-		<div class="col-span-3">
-			<div class="m-8 w-full">
-				<div class="inline p-4 text-5xl bg-primary text-primary-content rounded font-header">Blog.</div>
+			<div id="scroll-content" class="col-span-3 row-span-7 p-8 pt-0 overflow-scroll">
+				<slot />
 			</div>
-			<slot />
+			<button id="scroll-top-btn" class="btn btn-circle absolute w-16 h-16 bottom-8 right-8 bg-primary-content text-primary hidden">
+				<i class="fa-solid fa-arrow-up text-2xl"></i>
+			</button>
 		</div>
-	</div>
 	</body>
 </html>
+
+<script>
+	const scrollContent = document.getElementById('scroll-content');
+	const scrollButton = document.getElementById('scroll-top-btn');
+
+	if (!scrollContent || !scrollButton) {
+		throw new Error('Could not find scroll content or scroll button');
+	}
+
+	const scrollFunction = () => {
+		if (
+			scrollContent.scrollTop > 20
+		) {
+			scrollButton.classList.remove("hidden");
+		} else {
+			scrollButton.classList.add("hidden");
+		}
+	};
+
+	const backToTop = () => {
+		scrollContent.scrollTo({ top: 0, behavior: 'smooth' });
+	};
+
+	scrollButton.addEventListener("click", backToTop);
+	scrollContent.addEventListener("scroll", scrollFunction);
+</script>

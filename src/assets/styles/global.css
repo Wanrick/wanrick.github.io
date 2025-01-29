@@ -3,6 +3,7 @@
 @plugin "daisyui" {
     themes: light --default, dark --prefersdark, cupcake;
 }
+@plugin "@tailwindcss/typography";
 
 @theme {
     --font-header: "Space Mono", "serif";
@@ -47,4 +48,12 @@ html, body {
 
 body {
     font-family: "Karla", serif;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: disc;
 }

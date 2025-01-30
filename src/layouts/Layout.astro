@@ -23,7 +23,9 @@ const headingSize = title.length > 20 ? "text-2xl" : "text-5xl";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Astro description"/>
 		<meta name="generator" content={Astro.generator}/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/favicon/icon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 		<title>Wanrick Dev - {title}</title>
 		<script is:inline>
 			if (localStorage.getItem("theme") === null) {

@@ -4,6 +4,7 @@ import Prose from '../components/Prose.astro';
 
 const {frontmatter} = Astro.props;
 const imageUrl = frontmatter.image.url;
+const formattedDate = (frontmatter.pubDate as Date).toLocaleDateString('en-NL', {day: 'numeric', month: 'short', year: 'numeric'});
 ---
 <Layout title={frontmatter.title}>
     <div id="hero-image" class="w-full h-96 p-4 bg-cover bg-center flex items-end">
@@ -11,7 +12,7 @@ const imageUrl = frontmatter.image.url;
             <p class="col-span-4 text-xl"><em>{frontmatter.description}</em></p>
             <div class="col-span-2 flex flex-col items-end justify-end">
                 <p>Written by: {frontmatter.author}</p>
-                <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+                <p>{formattedDate}</p>
             </div>
         </div>
     </div>

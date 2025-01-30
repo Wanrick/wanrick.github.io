@@ -1,0 +1,51 @@
+---
+
+---
+
+<label class="swap swap-rotate">
+    <!-- this hidden checkbox controls the state -->
+    <input id="lightSwitch" type="checkbox" class="theme-controller" value="dim"></input>
+
+    <!-- sun icon -->
+    <i class="fa-solid fa-sun swap-off text-primary-content text-3xl"></i>
+
+    <!-- moon icon -->
+    <i class="fa-solid fa-moon swap-on text-primary-content text-3xl"></i>
+</label>
+
+<script>
+    const lightSwitch = document.getElementById('lightSwitch') as HTMLInputElement;
+
+    if (localStorage.getItem("theme") === null) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            lightSwitch.checked = true;
+        } else {
+            lightSwitch.checked = false;
+        }
+    } else {
+        lightSwitch.checked = localStorage.getItem('theme') === 'dim';
+    }
+
+    lightSwitch.addEventListener('change', () => {
+        if (lightSwitch.checked) {
+            document.documentElement.setAttribute('data-theme', 'dim');
+            localStorage.setItem('theme', 'dim');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'cupcake');
+            localStorage.setItem('theme', 'cupcake');
+        }
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        event.matches ? setDarkTheme() : setLightTheme();
+    });
+    const setDarkTheme = () => {
+        document.documentElement.setAttribute("data-theme", "dim");
+        localStorage.setItem("theme", "dim");
+        lightSwitch.checked = localStorage.getItem('theme') === 'dim';
+    };
+    const setLightTheme = () => {
+        document.documentElement.setAttribute("data-theme", "cupcake");
+        localStorage.setItem("theme", "cupcake");
+        lightSwitch.checked = localStorage.getItem('theme') === 'dim';
+    };
+</script>

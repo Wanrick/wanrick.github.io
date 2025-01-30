@@ -4,7 +4,7 @@ pubDate: 2024-02-13
 description: '“It is well-known what a middleman is: he is a man who bamboozles one party and plunders the other.” - Benjamin Disraeli'
 author: 'Wanrick'
 image:
-    url: '/src/blog/images/dog-between-two-phones.jpg'
+    url: '/images/dog-between-two-phones.jpg'
     alt: 'Cover image for the post'
 tags: ["middleware", "dotnet8", "aspnetcore"]
 ---

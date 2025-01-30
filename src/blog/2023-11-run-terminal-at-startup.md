@@ -4,7 +4,7 @@ pubDate: 2023-11-30
 description: '“Admin motto: I may not always know what I’m doing, but I’m doing it with confidence.”'
 author: 'Wanrick'
 image:
-   url: '/src/blog/images/futuristic-terminal.jpg'
+   url: '/images/futuristic-terminal.jpg'
    alt: 'Cover image for the post'
 tags: ["windows", "terminal", "admin", "windows-terminal"]
 ---
